@@ -1,0 +1,167 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+body {
+    color: hsl(233, 13%, 49%);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    background: url("images/bg-top.svg") no-repeat fixed right top, url("images/bg-bottom.svg") no-repeat fixed left bottom;
+    background-color: hsl(240, 78%, 98%);
+}
+
+h1{
+    margin: 4rem 0 1.5rem;
+}
+
+.switch-label {
+    color: hsl(234, 14%, 74%);
+}
+
+#price-chk {
+    display: none;
+}
+
+.price-switch {
+    position: relative;
+    cursor: pointer;
+    width: 64px;
+    height: 34px;
+    border-radius: 34px;
+    top: 10px;
+    display: inline-block;
+    background-image: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+.price-switch::before {
+    position: absolute;
+    content: " ";
+    display: inline-block;
+    height: 26px;
+    width: 26px;
+    top: 4px;
+    left: 4px;
+    border-radius: 50%;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.mon-price {
+    display: none;
+}
+
+.ann-price {
+    display: inline-block;
+}
+
+#price-chk:checked~* .mon-price {
+    display: inline-block;
+}
+
+#price-chk:checked~* .ann-price {
+    display: none;
+}
+
+#price-chk:checked~.price-switch::before {
+    -ms-transform: translateX(30px);
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+}
+
+.price-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem 0;
+}
+
+ul {
+    list-style-type: none;
+    margin:0;
+}
+
+li {
+    padding: 1rem 0;
+    margin: 0 2rem;
+}
+
+.card {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 20px;
+    width: 22rem;
+    height: 26rem;
+    padding: 1rem 0;
+}
+.title{
+    font-size:18px;
+}
+
+.dark {
+    color: hsl(232, 13%, 33%);
+}
+
+.big {
+    font-size: 4.3rem;
+}
+.big span{
+    font-size: 2.5rem;
+    vertical-align: 15%;
+    padding-right: .5rem;
+}
+.big~li {
+    border-top: .5px solid hsl(234, 14%, 74%);
+}
+
+.recommend {
+    background-image: linear-gradient(to right bottom, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    padding: 2.5rem 0;
+    color: hsl(0, 0%, 100%);
+}
+
+button {
+    border-radius: 10px;
+    background-image: linear-gradient(to right bottom, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    cursor: pointer;
+    color: hsl(0, 0%, 100%);
+    font-size: 13px;
+    height: 3rem;
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-image: none;
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid hsl(237, 63%, 64%);
+    color: hsl(237, 63%, 64%);
+}
+
+.recommend button {
+    background-color: hsl(0, 0%, 100%);
+    background-image: none;
+    color: hsl(237, 63%, 64%);
+}
+
+.recommend button:hover {
+    background-image: linear-gradient(to right bottom, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    border: 1px solid hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%);
+}
+
+@media only screen and ( max-width: 900px) {
+    .price-area {
+        flex-direction: column;
+    }
+    .recommend {
+        padding:1rem 0;
+        margin:2rem;
+    }
+}
